@@ -1,5 +1,7 @@
 section .data
 	text: db "hello, world", 0
+	newline: db 10
+
 
 section .bss
 len resb 1
@@ -49,7 +51,7 @@ print_string:
 	ret
 
 print_newline:
-	mov rsi, 10
+	mov rsi, newline
 	call print_char
 
 	ret
